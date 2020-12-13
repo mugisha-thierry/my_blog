@@ -53,6 +53,23 @@ class Post(db.Model):
     time = db.Column(db.DateTime, default = datetime.utcnow)
     comment = db.relationship('Comment',backref='post',lazy='dynamic')
 
+    @classmethod
+    def clear_post(cls):
+        Bloc.post.clear()
+
+    @classmethod
+    def get_posts(cls):
+        post = Post.query.filter_by(id = id).all()
+        return post
+
+    def delete(self, id):
+        comments = Comment.query.filter_by(id = id).all()
+        for comment in comments:
+            db.session.delete(comment)
+            db.session.commit()
+        db.session.delete(self)
+        db.session.commit()
+
 
     def __repr__(self):
         return f'Post {self.name}' 
@@ -64,16 +81,28 @@ class Comment(db.Model):
     __tablename__ = 'comments'
     id = db.Column(db.Integer, primary_key=True)
     comment = db.Column(db.Text(),nullable = False)
-    post_id = db.Column(db.Integer,db.ForeignKey('posts.id'),nullable = False)
+    post_id = db.Column(db.Integer,db.ForeignKey('posts.id'))
 
 
     @classmethod
-    def get_comments(cls,post_id):
-        comments = Comment.query.filter_by(post_id=post_id).all()
-        return comments
+    def clear_comment(self):
+        Comment.comments.clear()
+
+    @classmethod
+    def get_comments(cls, id):
+        comments = Comment.query.filter_by(post_id = id).all()
+        return comments    
 
 
     def __repr__(self):
         return f'comment:{self.comment}'
 
+class Quotes:
+    '''
+    Quote class to define quote objects
+    '''
 
+
+    def __init__(self,author,quote):
+        self.author = author
+        self.quote = quote
