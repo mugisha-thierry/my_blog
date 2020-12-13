@@ -1,4 +1,4 @@
-<!-- {% extends 'base.html'%}
+{% extends 'base.html'%}
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block content %}
@@ -13,8 +13,6 @@
         <p>Comments</p {% for comment in all_comments %} <div class="card">
         <div class="card p-3">
             <p class="card-title">{{ comment.comment }}</p>
-            <p class="card-text">  Written by:
-                {{comment.user.username}}</p>
         </div>
     </div>
     {% endfor %}
@@ -27,4 +25,4 @@
 {%endif%}
 </div>
 
-{% endblock%} -->
+{% endblock%}
