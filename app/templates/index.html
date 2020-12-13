@@ -1,9 +1,27 @@
-<!-- {% import 'macros.html' as macro%}
+{% import 'macros.html' as macro%}
 {% extends 'base.html'%}
 {% block content %}
- 
-<h1 class="text-center" style="color: red; padding-top: 50px; font-family: 'Secular One', sans-serif;"><strong>The Pitch</strong></h1>
+<div class="jumbotron"
+    style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-aDK-twNUiSDNjj-u1px-p0nFSYYRO5aqTg&usqp=CAU');background-size: cover; background-position: center;">
+    <div>
+        <h1 class="text-center"
+            style="letter-spacing: 5px;font-family: 'Euphoria Script', cursive;color: rgb(19, 56, 3);"><strong>
+            MyBlog</strong></h1>
+        <p class="text-center"
+            style="color: black;font-style: italic;font-family: 'Times New Roman', Times, serif;">
+            Feel free to Post and leave comments... </p>
+    </div>
+    <div class="col-md-4">
+        <blockquote class="blockquote"
+            style="background: #f9f9f913;color: black;font-family: 'Times New Roman', Times, serif;text-align: center;">
+            <p style="font-size:17px"><i class="fas fa-quote-left"></i><i>{{ quotes.quote }}</i><i
+                    class="fas fa-quote-right"></i></p>
+            <footer class="blockquote-footer" style="color: black;font-weight: bold;font-size: 17px;">{{quotes.author}}
+            </footer>
+        </blockquote>
+    </div>
 
+</div>
 <div class="row">
     <div class="col-3">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -19,7 +37,7 @@
     </div>
     <div class="col-9">
         <div class="tab-content" id="v-pills-tabContent">
-            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">{{macro.display(pitch)}}
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">{{macro.display(post)}}
                 </div>
             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">{{macro.display(skills)}}
             </div>
@@ -31,4 +49,4 @@
     </div>
 </div>
 
-{% endblock %} -->
+{% endblock %} 
