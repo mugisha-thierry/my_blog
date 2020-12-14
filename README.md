@@ -4,7 +4,7 @@ This app alllows user to read writter's blog and comment on them.
 It also alllows writters to sign up in order to add their blog.
 It also show random quotes.
 ---
-![]()
+![](https://res.cloudinary.com/mugisha-thierry/image/upload/v1607904256/blog_yfep0i.png)
 ## Author
 Mugisha Thierry student from Moringa School
 ---
